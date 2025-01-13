@@ -1,0 +1,49 @@
+# Virtual environment
+venv/
+*.pyc
+*.pyo
+__pycache__/
+env/
+
+# Flask settings
+instance/
+*.env
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# Database
+*.sqlite3
+*.db
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Jupyter Notebook checkpoints (if applicable)
+.ipynb_checkpoints/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Static files (optional, depending on how you generate them)
+static/
+media/

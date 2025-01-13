@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramayana Data Uploader</title>
+</head>
+<body>
+    <h1>Upload Ramayana Event Data</h1>
+    <a href="{{ url_for('upload_file') }}">Upload Excel File</a>
+    <hr>
+    <h2>Search Events by Character</h2>
+    <form action="{{ url_for('search') }}" method="POST">
+        <input type="text" name="character_name" placeholder="Enter Character Name" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

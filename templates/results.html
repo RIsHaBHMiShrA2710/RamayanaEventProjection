@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Event Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Events for {{ character }}</h1>
+        <div class="cantos">
+            {% for canto, chapters in grouped_events.items() %}
+            <div class="canto">
+                <h2>Canto: {{ canto }}</h2>
+                <div class="chapters">
+                    {% for chapter, events_in_chapter in chapters.items() %}
+                    <div class="chapter">
+                        <h3>Chapter: {{ chapter }}</h3>
+                        <div class="events">
+                            {% for event in events_in_chapter %}
+                            <div class="event-item">
+                                <div class="event-content">
+                                    <strong>Sequence:</strong> {{ event.sequence }} <br>
+                                    <strong>Event:</strong> {{ event.event }} <br>
+                                    <strong>Event Detail:</strong> {{ event.event_detail }} <!-- New line for event detail -->
+                                </div>
+                            </div>
+                            {% if not loop.last %}
+                            <div class="arrow">&#x2193;</div> <!-- down arrow to indicate flow -->
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% if not loop.last %}
+                    <div class="arrow">&#x2193;</div> <!-- down arrow to indicate chapter flow -->
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% if not loop.last %}
+            <div class="arrow">&#x2193;</div> <!-- down arrow to indicate canto flow -->
+            {% endif %}
+            {% endfor %}
+        </div>
+        <a href="/" class="button">Search Again</a>
+    </div>
+</body>
+</html>
